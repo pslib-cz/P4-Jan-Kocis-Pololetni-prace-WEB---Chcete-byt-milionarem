@@ -1,0 +1,43 @@
+﻿@page
+@model GamesCollection.DetailsModel
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Company</h1>
+<dl>
+    <dt>Name</dt>
+    <dd>@Model.Company.Name</dd>
+    <dt>Country</dt>
+    <dd>@Model.Company.CountryCode</dd>
+    <dt>Website</dt>
+    <dd>@Model.Company.Website</dd>
+</dl>
+<h2>Subsidiaries</h2>
+<ul>
+    @foreach (var item in Model.Company?.Children)
+    {
+        <li>@item.Name</li>
+    }
+</ul>
+<h2>Games</h2>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(x => x.CGs.FirstOrDefault().Name)</th>
+            <th>@Html.DisplayNameFor(x => x.CGs.FirstOrDefault().IsPublisher)</th>
+            <th>@Html.DisplayNameFor(x => x.CGs.FirstOrDefault().IsDeveloper)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var game in Model.CGs)
+        {
+            <tr>
+                <td>@game.Name</td>
+                <td>@(game.IsPublisher ? "✓" : '\u2717'.ToString() )</td>
+                <td>@(game.IsDeveloper ? "✓" : '\u2717'.ToString())</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
