@@ -143,9 +143,9 @@ namespace MilionarApp.Migrations
 
                     b.Property<bool>("EmailConfirmed");
 
-                    b.Property<int>("FirstName");
+                    b.Property<string>("FirstName");
 
-                    b.Property<int>("LastName");
+                    b.Property<string>("LastName");
 
                     b.Property<bool>("LockoutEnabled");
 

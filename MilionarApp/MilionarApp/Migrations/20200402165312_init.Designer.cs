@@ -10,8 +10,8 @@ using MilionarApp.Models;
 namespace MilionarApp.Migrations
 {
     [DbContext(typeof(IdentityAppContext))]
-    [Migration("20200402155826_CreateIdentitySchema")]
-    partial class CreateIdentitySchema
+    [Migration("20200402165312_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -145,9 +145,9 @@ namespace MilionarApp.Migrations
 
                     b.Property<bool>("EmailConfirmed");
 
-                    b.Property<int>("FirstName");
+                    b.Property<string>("FirstName");
 
-                    b.Property<int>("LastName");
+                    b.Property<string>("LastName");
 
                     b.Property<bool>("LockoutEnabled");
 
