@@ -1,31 +1,29 @@
-# GamesCollection
+# Kdo chce být milionářem?
 
-Zadání pro cvičení z Webů. Pracujte čistě pomocí LINQ metod a Entity Frameworku. Cílem je vytvoření aplikace s pohledy master/detail/detail. 
-Na základě poskytnutého kódu vytvořte část aplikace obsahující seznam herních společností.
-Důležité je udělat kód pro akce, ten pak provádět prostřednictvím parametrů URL, následně je možné dokončit UI.
-Máte hotové připojení k databázi, modely databáze, migrace.
+Cílem práce je vytvořit ASP.NET aplikaci, která bude:
+ukládat data do databáze
+umožní registrovat nové uživatele
+obsahuje funkční přihlašování uživatelů
+bude funkční
+logika aplikace bude uložena v service, ta bude mít přístup k EntityFrameworku přes Dependency Injection
+pagemodely budou samozřejmě také používat service
 
-Vytvořte:
-1. Na titulní stránce (Index)
-   1. Zobrazení všech firem v tabulce
-   1. Filtrování seznamu firem podle země původu
-   1. Filtrování seznamu firem podle části názvu
-   1. Filtrování seznamu firem podle mateřské firmy (eventuálně samostatnosti, některé firmy nemají vlastníka)
-   1. Změna řazení seznamu firem podle země a podle názvu (pomocí odkazů v záhlaví tabulky, vzestupně i sestupně)
-1. Vytvořte stránku Detail pro podrobnosti o herní společnosti
-   1. Zobrazte na stránce jiné společnosti, které tato firma vlastní
-   1. Zobrazte na stránce všechny hry, které tato firma produkovala nebo vyvíjela (je možné je vypisovat dohromady nebo ve dvou skupinách)
-1. Vytvořte stránku Game pro podrobnosti o hře
-1. Všechny stránky propojte pomocí odkazů
+Tématem práce je známá hra "Chcete být milionářem".
 
-Další cvičení:
-1. Vytvořte stránku pro přidávání nových firem
-1. Vytvořte stránku pro editaci firmy
-1. Vytvořte stránku pro odstranění firmy zobrazující kontrolní dotaz před smazáním položky. Firmu by nemělo být možné smazat pokud s ní souvisí jiné položky databáze (firmy nebo hry).
-1. Vytvořte stránku pro zobrazení všech her zobrazující také vývojáře
-   1. Umožněte hry filtrovat podle názvu
-   1. Umožněte hry filtrovat podle vývojáře
-   1. Umožněte hry filtrovat podle kategorií hry
-1. Vytvořte stránku pro přidávání nových her
-1. Vytvořte stránku pro editaci her
-1. Vytvořte rozhraní pro přiřazování her do kategorií
+Takže se po identifikaci uživatele budou objevovat otázky z databáze a k nim přidělené odpovědi.
+Při správné odpovědi hráč pokračuje, při špatné končí.
+Hra bude rozdělena na 3 stupně složitosti - 
+vždy po 5 otázkách se složitost zvyšuje a vybírají se těžší otázky, tedy celkem budou 3 databáze s otázkami -> 
+každá podle složitosti + ke každé 4 odpovědi z nichž bude jen 1 správná. Když odpoví hráč správně, 
+tak pokračuje dál a při špatném zodpovězení hra končí a jede odznovu. Když hráč zodpoví všechny otázky správně, 
+tak na konci se vypíše něco jako "zvítězil jste", skóre se vynuluje a hra začíná odznovu.
+
+DATABÁZE
+
+USER - Identita, ověření uživatele který hraje, váže se na něj jaké kolo hry hraje a pomocí toho se buď 
+	zvýší náročnost nebo se bude zjišťovat, kterou otázku již zodpověděl, aby se neopakovala
+Otázka ve hře - zjištění, které otázky již byly zodpovězeny
+Otázka - Otázka obsahující nějaké unikátní ID, text a náročnost podle toho, které kolo se bude objevovat
+Odpověď - Odpověď obsahující unikátní ID a ID pojící se k otázce, budou 4 k jedný otázce - jen 1 správná, obsahuje text
+	a zjištění, zda se jedná o správnou odpověď či špatnou
+
