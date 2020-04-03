@@ -13,7 +13,7 @@ Tématem práce je známá hra "Chcete být milionářem".
 Takže se po identifikaci uživatele budou objevovat otázky z databáze a k nim přidělené odpovědi.
 Při správné odpovědi hráč pokračuje, při špatné končí.
 Hra bude rozdělena na 3 stupně složitosti - 
-vždy po 5 otázkách se složitost zvyšuje a vybírají se těžší otázky, tedy celkem budou 3 databáze s otázkami -> 
+vždy po 5 otázkách se složitost zvyšuje a vybírají se těžší otázky -> 
 každá podle složitosti + ke každé 4 odpovědi z nichž bude jen 1 správná. Když odpoví hráč správně, 
 tak pokračuje dál a při špatném zodpovězení hra končí a jede odznovu. Když hráč zodpoví všechny otázky správně, 
 tak na konci se vypíše něco jako "zvítězil jste", skóre se vynuluje a hra začíná odznovu.
