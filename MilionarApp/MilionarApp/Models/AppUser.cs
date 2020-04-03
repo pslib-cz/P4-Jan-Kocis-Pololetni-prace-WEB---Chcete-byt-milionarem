@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace MilionarApp.Models
 {
-    public class AppUser : IdentityUser <int>
+    public class AppUser : IdentityUser
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
 
-        public int Kolo { get; set; }
-        public bool JeVeHre { get; set; }
+        public int Round { get; set; }
+        public bool IsInGame { get; set; }
     }
 }

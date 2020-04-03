@@ -9,20 +9,17 @@ namespace MilionarApp.Models
 {
     public class Question
     {
+        //Unikátní ID otázky
         [Key]
         public int QuestionId { get; set; }
 
+        //Text otázky
         [Required]
         public string TextOtazky { get; set; }
 
+        //Náročnost otázky, podle které se budou určité otázky objevovat v určité části hry (podle obtížnosti)
         [Required]
         public int Narocnost { get; set; }
-
-        [ForeignKey("Parent")]
-        public int? ParentId { get; set; }
-        public Question Parent { get; set; }
-
-        public ICollection<Question> Children { get; set; }
 
         public ICollection<Answer> OdpovediKOtazce { get; set; }
 
