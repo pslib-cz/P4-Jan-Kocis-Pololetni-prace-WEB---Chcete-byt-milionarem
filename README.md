@@ -27,5 +27,5 @@ Otázka - Otázka obsahující nějaké unikátní ID, text a náročnost podle 
 Odpověď - Odpověď obsahující unikátní ID a ID pojící se k otázce, budou 4 k jedný otázce - jen 1 správná, obsahuje text
 	a zjištění, zda se jedná o správnou odpověď či špatnou
 
-[![ER Model](navrhDatabaze.PNG)](https://raw.githubusercontent.com/pslib-cz/P4-Jan-Kocis-Pololetni-prace-WEB---Chcete-byt-milionarem/master/navrhDatabaze.PNG)
+[![ER Model](navrhDatabaze.PNG)]
 
