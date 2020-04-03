@@ -10,5 +10,8 @@ namespace MilionarApp.Models
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
+
+        public int Kolo { get; set; }
+        public bool JeVeHre { get; set; }
     }
 }
