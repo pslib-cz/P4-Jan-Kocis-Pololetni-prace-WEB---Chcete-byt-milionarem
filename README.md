@@ -27,5 +27,5 @@ Otázka - Otázka obsahující nějaké unikátní ID, text a náročnost podle 
 Odpověď - Odpověď obsahující unikátní ID a ID pojící se k otázce, budou 4 k jedný otázce - jen 1 správná, obsahuje text
 	a zjištění, zda se jedná o správnou odpověď či špatnou
 
-[![ER Model](Database.png)]
+![ER Model](Database.png)
 
