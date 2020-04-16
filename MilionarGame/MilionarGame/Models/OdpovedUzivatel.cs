@@ -9,28 +9,20 @@ namespace MilionarGame.Models
 {
     public class OdpovedUzivatel
     {
-        //Unikátní ID odpovědi
+        //ID uživatelovi odpovědi
         [Key]
-        public int OdpovedID { get; set; }
+        public int ID_OdpovedUzivatele { get; set; }
 
-        //Text odpovědi
-        [Required]
-        public string textOdpoved { get; set; }
-
-        //Zda je odpověď správná či ne
+        //Zjištění, zda uživatel odpověděl správně
         [Required]
         public bool Spravnost { get; set; }
 
+        public int ID_Otazka { get; set; }
+        [ForeignKey("ID_Otazka")]
+        public Otazka Zodpovezeno { get; set; }
 
-        public int Otazka_ID { get; set; }
-
-        [ForeignKey("Otazka_ID")]
-        public Otazka Otazka { get; set; }
-
-
-        public int Uzivatel_ID { get; set; }
-
-        [ForeignKey("Uzivatel_ID")]
-        public Uzivatel Uzivatel { get; set; }
+        public int ID_Uzivatel { get; set; }
+        [ForeignKey("ID_Uzivatel")]
+        public Uzivatel Zodpovedel { get; set; }
     }
 }
