@@ -6,14 +6,10 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MilionarGame.Models
+namespace MilionarFINAL.Models
 {
     public class Uzivatel : IdentityUser
     {
-        //Unikátní ID uživatele
-        [Key]
-        public int UzivatelID { get; set; }
-
         //Kolo, ve kterém daný uživatel je - odvíjí se od toho složitost otázek
         public int kolo { get; set; }
 

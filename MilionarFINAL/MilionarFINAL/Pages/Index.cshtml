@@ -1,0 +1,14 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+    <div class="text-center">
+        @(Model.score)
+        <h1 class="display-4">Chcete být milionářem?</h1>
+        @if (User.Identity.IsAuthenticated)
+        {
+            <a href="@Url.Page("./Hra")">Začít hrát!</a>
+        }
+    </div>

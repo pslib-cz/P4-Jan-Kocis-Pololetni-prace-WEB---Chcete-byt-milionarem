@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace MilionarGame.Pages
+namespace MilionarFINAL.Pages
 {
-    public class GameModel : PageModel
+    public class HraModel : PageModel
     {
         public void OnGet()
         {

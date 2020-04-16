@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MilionarGame.Models
+namespace MilionarFINAL.Models
 {
     public class OdpovedUzivatel
     {
@@ -21,7 +21,7 @@ namespace MilionarGame.Models
         [ForeignKey("ID_Otazka")]
         public Otazka Zodpovezeno { get; set; }
 
-        public int ID_Uzivatel { get; set; }
+        public string ID_Uzivatel { get; set; }
         [ForeignKey("ID_Uzivatel")]
         public Uzivatel Zodpovedel { get; set; }
     }

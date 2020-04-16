@@ -1,0 +1,15 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Game page";
+}
+
+    <div class="text-center">
+        <h1 class="display-4">Aktuální kolo: @(Model.score)</h1>
+        <p></p>
+        <h2 type="text" class="display-4">@(Model.aktualniotazka.textOtazka)</h2>
+        <form method="post">
+            <input asp-for="Odpoveduzivatel" type="text" />
+            <input type="submit" name="Odeslat"/>
+        </form>
+    </div>

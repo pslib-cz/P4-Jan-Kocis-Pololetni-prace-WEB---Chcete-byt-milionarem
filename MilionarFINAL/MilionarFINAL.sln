@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30002.166
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MilionarGame", "MilionarGame\MilionarGame.csproj", "{8203E411-E8EE-4A14-A3D8-5B0F791BC5D7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MilionarFINAL", "MilionarFINAL\MilionarFINAL.csproj", "{DF24431D-9250-4F4F-AAF7-1E195B37474D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{8203E411-E8EE-4A14-A3D8-5B0F791BC5D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8203E411-E8EE-4A14-A3D8-5B0F791BC5D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8203E411-E8EE-4A14-A3D8-5B0F791BC5D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8203E411-E8EE-4A14-A3D8-5B0F791BC5D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF24431D-9250-4F4F-AAF7-1E195B37474D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF24431D-9250-4F4F-AAF7-1E195B37474D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF24431D-9250-4F4F-AAF7-1E195B37474D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF24431D-9250-4F4F-AAF7-1E195B37474D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {75FD79AB-4171-4798-A247-6AC365C96DF0}
+		SolutionGuid = {C0C836E1-0CF0-4918-B909-6C2B4EF5FCF5}
 	EndGlobalSection
 EndGlobal
