@@ -13,6 +13,10 @@ namespace MilionarFINAL.Models
         [Key]
         public int ID_OdpovedUzivatele { get; set; }
 
+        //Text uživatelovi odpovědi
+        [Required]
+        public string TextOdpoved { get; set; }
+
         //Zjištění, zda uživatel odpověděl správně
         [Required]
         public bool Spravnost { get; set; }
