@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
+using MilionarFINAL.Models;
 using MilionarFINAL.Service;
 
 namespace MilionarFINAL.Pages
@@ -18,8 +19,8 @@ namespace MilionarFINAL.Pages
         public HraService hraSR;
         public string email;
         public int score;
-        public dynamic aktualniotazka;
-        public string odpoved;
+        public Otazka aktualniotazka;
+
         public IndexModel(HraService hra)
         {
             hraSR = hra;
@@ -35,15 +36,16 @@ namespace MilionarFINAL.Pages
         public IActionResult OnPost()
         {
 
-            if (Odpoveduzivatel == aktualniotazka.odpovedOtazka)
+            bool vysledek = hraSR.Vyhodnoceni(Odpoveduzivatel);
+
+            if(vysledek == true)
             {
-                score++;
+                return RedirectToPage("Hra");
             }
             else
             {
-                score++;
-            }
-            return RedirectToPage();
+                return RedirectToPage("Hra");
+            }        
         }
     }
 }

@@ -29,36 +29,34 @@ namespace MilionarFINAL.Service
             return kontextDB.Uzivatele.First<Uzivatel>().kolo;
         }
 
-        public class Objekt
-        {
-            public string textOtazka { get; set; }
-            public string odpovedOtazka { get; set; }
-        }
-
         //Otázka, která se zobrazí a následně hádá odpověď
-        public dynamic AktualniOtazka()
+        public Otazka AktualniOtazka()
         {
             foreach(Otazka i in kontextDB.Otazky)
             {
                 if(i.Narocnost == kontextDB.Uzivatele.First<Uzivatel>().kolo)
                 {
-                    return new Objekt()
-                    {
-                        textOtazka = i.textOtazka,
-                        odpovedOtazka = i.Odpoved
-                    };
-                }
-                else
-                {
-                    return "";
+                    return i;
                 }
             }
-            return "";
+            return null;
         }
 
-        /*public bool Vyhodnoceni(string odpovedUzivatele)
+        public bool Vyhodnoceni(string ou)
         {
-            if (odpovedUzivatele == Objekt) ;
-        }*/
+            Otazka aktualni = AktualniOtazka();
+            if(aktualni.Odpoved == ou)
+            {
+                kontextDB.Uzivatele.First<Uzivatel>().kolo++;
+                kontextDB.SaveChanges();
+                return true;
+            }
+            else
+            {
+                kontextDB.Uzivatele.First<Uzivatel>().kolo = 0;
+                kontextDB.SaveChanges();
+                return false;
+            }            
+        }
     }
 }

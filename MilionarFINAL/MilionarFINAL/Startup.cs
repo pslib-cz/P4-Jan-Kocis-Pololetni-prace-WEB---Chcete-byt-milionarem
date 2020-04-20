@@ -15,6 +15,7 @@ using Microsoft.Extensions.Hosting;
 using MilionarFINAL.Service;
 using MilionarFINAL.Models;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 
 namespace MilionarFINAL
 {
@@ -47,6 +48,11 @@ namespace MilionarFINAL
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddTransient<HraService>();
             services.AddRazorPages();
+
+            services.AddSession();
+            services.AddMemoryCache();
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -65,7 +71,11 @@ namespace MilionarFINAL
             }
 
             app.UseHttpsRedirection();
+
             app.UseStaticFiles();
+
+            app.UseSession();
+
 
             app.UseRouting();
 
