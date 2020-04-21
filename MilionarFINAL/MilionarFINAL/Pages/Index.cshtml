@@ -1,14 +1,80 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Chcete být milionářem?";
 }
 
-    <div class="text-center">
-        @(Model.score)
-        <h1 class="display-4">Chcete být milionářem?</h1>
-        @if (User.Identity.IsAuthenticated)
-        {
-            <a href="@Url.Page("./Hra")">Začít hrát!</a>
-        }
+    <div class="container pl-3 pr-3 ml-3 mr-3">
+
+        <div class="container p-3 m-3 bg-dark text-white">
+            <div class="d-flex justify-content-center">
+                <h1 class="display-1">Chcete být milionářem?</h1>
+            </div>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <div class="text-center">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="display-4">
+                                <a class="text-danger" href="@Url.Page("./Hra")">Začít hrát!</a>
+                            </div>
+                        </div>
+                    </div>  
+                </div>
+            }
+        </div>
+
+        <div class="container p-3 my-3 border">
+            <div class="d-flex justify-content-center">
+                <h1 class="display-3">Návod hry:</h1>
+            </div>
+            <div class="text-center">
+                <div class="row">
+                    <div class="col-12">
+                        <p class="lead">
+                            1) Zaregistruj se (pokud zde již účet máš, tak se přihlaš)
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <p class="lead">
+                            2) Po přihlášení klikni na možnost "Začít hrát!"
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <p class="lead">
+                            3) Budou ti dávány jednotlivé otázky, na které je pouze 1 odpověď ze 4 nabízených
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <p class="lead">
+                            4) Svůj výběr identicky přepiš do pole pro text a klikni na tlačítko "Vyhodnotit"
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <p class="lead">
+                            5) Pokud jsi správně odpověděl, tak pokračuješ dál, pokud ne, tak hra končí
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <p class="lead">
+                            6) Hra končí poté, co jsi správně odpověděl na veškeré otázky
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+        
+
+
+
