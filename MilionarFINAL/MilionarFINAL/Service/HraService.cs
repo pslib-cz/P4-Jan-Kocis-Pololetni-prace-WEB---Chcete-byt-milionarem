@@ -29,6 +29,14 @@ namespace MilionarFINAL.Service
             return kontextDB.Uzivatele.First<Uzivatel>().kolo;
         }
 
+        public int Vynuluj()
+        {
+            int i = 0;
+            kontextDB.Uzivatele.First<Uzivatel>().kolo = i;
+            kontextDB.SaveChanges();
+            return i;    
+        }
+
         //Otázka, která se zobrazí a následně hádá odpověď
         public Otazka AktualniOtazka()
         {
@@ -45,6 +53,7 @@ namespace MilionarFINAL.Service
         public bool Vyhodnoceni(string ou)
         {
             Otazka aktualni = AktualniOtazka();
+
             if(aktualni.Odpoved == ou)
             {
                 kontextDB.Uzivatele.First<Uzivatel>().kolo++;
@@ -57,6 +66,19 @@ namespace MilionarFINAL.Service
                 kontextDB.SaveChanges();
                 return false;
             }            
+        }
+
+        public bool Konec()
+        {
+            int kolo = kontextDB.Uzivatele.First<Uzivatel>().kolo;
+            if (kolo == 10)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }
